@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB
 {
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db08";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=c1";
     protected $pdo;
     protected $table;
     public function __construct($table)
@@ -48,11 +48,13 @@ class DB
             $tmp = $this->a2s($id);
             $sql .= " where " . join(" && ", $tmp);
         } else if (is_numeric($id)) {
-            $sql .= " where  `id` ='$id'";
+            $sql .= " where  `id` = '$id'";
         } else {
             echo "錯誤:參數的資料型態必須是數字或陣列";
         }
-        return $row = $this->q($sql);
+        $row = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        return $row;
+    
     }
     function del($id)
     {
@@ -114,6 +116,16 @@ class DB
         return $this->math('min', $col, $where, $other);
     }
 }
+$Title = new DB('titles');
+$Ad = new DB('ad');
+$Mvim = new DB('mvim');
+$Image = new DB('image');
+$News = new DB('news');
+$Total=new DB('total');
+$Bottom = new DB('bottom');
+$Admin = new DB('admin');
+$Menu = new DB('menu');
+
 function dd($array)
 {
     echo "<pre>";
@@ -124,12 +136,4 @@ function to($url)
 {
     header("location:$url");
 }
-$Title = new DB('titles');
-$Total = new DB('total');
-$Bottom = new DB('bottom');
-$Ad = new DB('ad');
-$Mvim = new DB('mvim');
-$Image = new DB('image');
-$News = new DB('news');
-$Admin = new DB('admin');
-$Menu = new DB('menu');
+
