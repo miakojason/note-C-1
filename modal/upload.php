@@ -1,4 +1,5 @@
-<?php
+
+123<?php
 switch ($_GET['table']) {
     case "title":
         echo "<h3>更新網站標題圖片</h3>";
@@ -12,7 +13,7 @@ switch ($_GET['table']) {
 }
 ?>
 <hr>
-<form action="./api/add.php" method="post" enctype="multipart/form-data">
+<form action="./api/upload.php" method="post" enctype="multipart/form-data">
     <table style="width:70%;margin:auto">
         <tr>
             <?php
