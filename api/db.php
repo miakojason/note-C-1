@@ -25,14 +25,14 @@ class DB
     function save($array)
     {
         if (isset($array['id'])) {
-            $sql = "update `$this->table` set ";
             if (!empty($array)) {
+                $sql = "update `$this->table` set ";
                 $tmp = $this->a2s($array);
+                $sql .= join(",", $tmp);
+                $sql .= " where `id`='{$array['id']}'";
             } else {
-                echo "錯誤:缺少要編輯的欄位陣列";
+                echo "空的";
             }
-            $sql .= join(",", $tmp);
-            $sql .= " where `id` = '{$array['id']}'";
         } else {
             $sql = "insert into `$this->table`";
             $cols = "(`" . join("`,`", array_keys($array)) . "`)";
@@ -116,6 +116,7 @@ class DB
         return $this->math('min', $col, $where, $other);
     }
 }
+
 $Title = new DB('titles');
 $Ad = new DB('ad');
 $Mvim = new DB('mvim');
@@ -136,4 +137,12 @@ function to($url)
 {
     header("location:$url");
 }
+if(isset($_GET['do'])){
+    if(isset(${ucfirst($_GET['do'])})){
+        $DB=${ucfirst($_GET['do'])};
+    }
+}else{
+    $DB=$Title;
+}
 
+?>
