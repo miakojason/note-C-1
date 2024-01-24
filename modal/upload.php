@@ -12,7 +12,7 @@ switch ($_GET['table']) {
 }
 ?>
 <hr>
-<form action="./api/upload.php" method="post" enctype="multipart/form-data">
+<form action="./api/add.php" method="post" enctype="multipart/form-data">
     <table style="width:70%;margin:auto">
         <tr>
             <?php

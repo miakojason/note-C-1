@@ -10,12 +10,12 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td width="45%"><img src="./upload/" style="width:300px;height:30px;"></td>
+				<td width="45%"><img src="./upload/" style="width:300px;height:30px"></td>
 				<td width="23%"><input type="text" name="text[]" value=""></td>
 				<td width="7%"><input type="radio" name="sh" value=""></td>
 				<td width="7%"><input type="checkbox" name="del[]" value=""></td>
 				<td>
-					<input type="button" onclick="op('#cover','#cvr','./modal/upload.php?table= &id= ')" value="更新圖片">
+					<input type="button" value="更新圖片">
 					<input type="hidden" name="id[]" value="">
 				</td>
 			</tr>
@@ -23,7 +23,7 @@
 		<table style="margin-top:40px; width:70%;">
 			<tr>
 				<td width="200px">
-					<input type="button" onclick="op('#cover','#cvr','./modal/<?=$do;?>.php?table=<?=$do;?>')" value="新增網站標題圖片">
+					<input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片">
 				</td>
 				<td class="cent">
 					<input type="hidden" name="table" value="table">

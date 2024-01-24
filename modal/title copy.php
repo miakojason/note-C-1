@@ -3,11 +3,11 @@
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
-            <td>標題區圖片:</td>
+            <td>標題區圖片：</td>
             <td><input type="file" name="img"></td>
         </tr>
         <tr>
-            <td>標題區替代文字:</td>
+            <td>標題區替代文字：</td>
             <td><input type="text" name="text"></td>
         </tr>
     </table>
