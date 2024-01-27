@@ -32,6 +32,7 @@
 			}
 			?>
 		</table>
+		<div class="cent">
 		<?php
 		if ($now > 1) {
 			$prev = $now - 1;
@@ -46,6 +47,7 @@
 			echo "<a href='?do=$do&p=$next'> > </a>";
 		}
 		?>
+		</div>
 		<table style="margin-top:40px; width:70%;">
 			<tr>
 				<td width="200px">
