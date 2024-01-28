@@ -31,7 +31,7 @@
 						<input type="checkbox" name="del[]" value="<?=$row['id'];?>">
 					</td>
 					<td>
-						<input type="button" onclick="op('#cover','#cvr','./modal/submenu?table=<?=$do;?>&id=<?=$row['id'];?> ')" value="編輯次選單">
+						<input type="button" onclick="op('#cover','#cvr','./modal/submenu.php?table=<?=$do;?>&id=<?=$row['id'];?> ')" value="編輯次選單">
 					</td>
 				</tr>
 				<input type="hidden" name="id[]" value="<?=$row['id'];?>">
