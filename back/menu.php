@@ -31,7 +31,7 @@
 						<input type="checkbox" name="del[]" value="<?=$row['id'];?>">
 					</td>
 					<td>
-						<input type="button" onclick="op('#cover','#cvr','./modal/upload.php?table=<?=$do;?>&id=<?=$row['id'];?> ')" value="編輯次選單">
+						<input type="button" onclick="op('#cover','#cvr','./modal/submenu?table=<?=$do;?>&id=<?=$row['id'];?> ')" value="編輯次選單">
 					</td>
 				</tr>
 				<input type="hidden" name="id[]" value="<?=$row['id'];?>">
@@ -42,7 +42,7 @@
 		<table style="margin-top:40px; width:70%;">
 			<tr>
 				<td width="200px">
-					<input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?=$do;?>')" value="新增網站標題圖片">
+					<input type="button" onclick="op('#cover','#cvr','./modal/<?= $do;?>.php?table=<?=$do;?>')" value="新增網站標題圖片">
 				</td>
 				<td class="cent">
 					<input type="hidden" name="table" value="<?=$do;?>">

@@ -17,7 +17,7 @@
 				
 					</td>
 					<td width="45%">
-						<input type="text" name="pw[]" value="<?= $row['ow']; ?>">
+						<input type="text" name="pw[]" value="<?= $row['pw']; ?>">
 					</td>
 					<td width="7%">
 					<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
