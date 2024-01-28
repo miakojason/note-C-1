@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-24 03:01:22
+-- 產生時間： 2024-01-28 16:23:01
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -29,9 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ad` (
   `id` int(5) UNSIGNED NOT NULL,
-  `img` text NOT NULL,
+  `text` text NOT NULL,
   `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `ad`
+--
+
+INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
+(1, '123123', 1),
+(2, '123123', 1);
 
 -- --------------------------------------------------------
 
@@ -75,6 +83,13 @@ CREATE TABLE `image` (
   `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 傾印資料表的資料 `image`
+--
+
+INSERT INTO `image` (`id`, `img`, `sh`) VALUES
+(1, '01C04.gif', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -83,11 +98,19 @@ CREATE TABLE `image` (
 
 CREATE TABLE `menu` (
   `id` int(5) UNSIGNED NOT NULL,
-  `text` int(11) NOT NULL,
-  `href` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `href` text NOT NULL,
   `menu_id` int(5) NOT NULL,
   `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `menu`
+--
+
+INSERT INTO `menu` (`id`, `text`, `href`, `menu_id`, `sh`) VALUES
+(1, '123123', '23123', 0, 1),
+(2, '123123', '123123', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -109,9 +132,19 @@ CREATE TABLE `mvim` (
 
 CREATE TABLE `news` (
   `id` int(5) UNSIGNED NOT NULL,
-  `img` text NOT NULL,
+  `text` text NOT NULL,
   `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `news`
+--
+
+INSERT INTO `news` (`id`, `text`, `sh`) VALUES
+(1, '123123123', 1),
+(2, '123123', 1),
+(3, '123123213', 1),
+(4, '123123123', 1);
 
 -- --------------------------------------------------------
 
@@ -131,7 +164,10 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`id`, `img`, `text`, `sh`) VALUES
-(10, '08-劉鎮煌.png', '111', 0);
+(12, '01B01.jpg', '111', 0),
+(13, '01B03.jpg', '222', 0),
+(14, '01B02.jpg', '333', 1),
+(15, '01B04.jpg', '444', 0);
 
 -- --------------------------------------------------------
 
@@ -217,7 +253,7 @@ ALTER TABLE `total`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
@@ -235,13 +271,13 @@ ALTER TABLE `bottom`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
@@ -253,13 +289,13 @@ ALTER TABLE `mvim`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `total`
