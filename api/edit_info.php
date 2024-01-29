@@ -5,3 +5,4 @@ $data = $DB->find(1);
 $data[$table] = $_POST[$table];
 $DB->save($data);
 to("../back.php?do=$table");
+?>
