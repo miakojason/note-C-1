@@ -54,7 +54,6 @@ class DB
         }
         $row = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         return $row;
-    
     }
     function del($id)
     {
@@ -122,7 +121,7 @@ $Ad = new DB('ad');
 $Mvim = new DB('mvim');
 $Image = new DB('image');
 $News = new DB('news');
-$Total=new DB('total');
+$Total = new DB('total');
 $Bottom = new DB('bottom');
 $Admin = new DB('admin');
 $Menu = new DB('menu');
@@ -137,12 +136,14 @@ function to($url)
 {
     header("location:$url");
 }
-if(isset($_GET['do'])){
-    if(isset(${ucfirst($_GET['do'])})){
-        $DB=${ucfirst($_GET['do'])};
+if (isset($_GET['do'])) {
+    if (isset(${ucfirst($_GET['do'])})) {
+        $DB = ${ucfirst($_GET['do'])};
     }
-}else{
-    $DB=$Title;
+} else {
+    $DB = $Title;
 }
-
-?>
+if (!isset($_SESSION['visted'])) {
+    $Total->q("update `total` set `total` = `total`+1 where `id`=1");
+    $_SESSION['visted'] = 1;
+}
