@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-28 16:23:01
+-- 產生時間： 2024-02-08 17:43:57
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -53,6 +53,15 @@ CREATE TABLE `admin` (
   `pw` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 傾印資料表的資料 `admin`
+--
+
+INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
+(1, 'admin', '1234'),
+(2, '123', '123'),
+(3, '111', '111');
+
 -- --------------------------------------------------------
 
 --
@@ -88,7 +97,12 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `img`, `sh`) VALUES
-(1, '01C04.gif', 1);
+(2, '01D03.jpg', 1),
+(4, '01D09.jpg', 1),
+(5, '01D02.jpg', 1),
+(6, '01D09.jpg', 1),
+(7, '01D08.jpg', 1),
+(8, '01D10.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +124,11 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `text`, `href`, `menu_id`, `sh`) VALUES
 (1, '123123', '23123', 0, 1),
-(2, '123123', '123123', 0, 1);
+(2, '123123', '123123', 0, 1),
+(3, '123', '123', 2, 1),
+(4, '123', '123', 2, 1),
+(5, '111', '1111', 1, 1),
+(6, '111', '11', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -123,6 +141,15 @@ CREATE TABLE `mvim` (
   `img` text NOT NULL,
   `sh` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `mvim`
+--
+
+INSERT INTO `mvim` (`id`, `img`, `sh`) VALUES
+(1, '01C04.gif', 1),
+(2, '01C06.gif', 1),
+(3, '01C01.gif', 1);
 
 -- --------------------------------------------------------
 
@@ -141,10 +168,12 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `text`, `sh`) VALUES
-(1, '123123123', 1),
-(2, '123123', 1),
-(3, '123123213', 1),
-(4, '123123123', 1);
+(1, '\r\n11月23日(星期五)將於彰化縣田尾鄉菁芳園休閒農場\r\n舉辦「高中職生涯輔導知能研習」\r\n中區學校每校至多2名\r\n以普通科、專業類科教師優先報名參加\r\n生涯規劃教師次之，參加人員公差假\r\n並核實派代課\r\n當天還有專車接送(8:35前在員林火車站集合)\r\n如此好康的機會，怎能錯過？！\r\n熱烈邀請師長們向輔導室(分機234)報名\r\n名額有限，動作要快！！\r\n報名截止日期：本周四 10月25日17:00前！', 1),
+(2, '\r\n台視百萬大明星節目辦理海選活動\r\n時間:101年10月27日下午13時\r\n地點:彰化', 1),
+(3, '國立故宮博物院辦理\r\n「商王武丁與后婦好 殷商盛世文化藝術特展」暨\r\n「赫赫宗周 西周文化特展」', 1),
+(4, '台灣亞洲藝術文化教育交流學會第一屆年會國際研討會\r\n活動日期：101年3月3～4日(六、日)\r\n活動主題：創造力、文化、全人教育\r\n有意參加者請至http://www.caaetaiwan.org下載報名表', 1),
+(5, '台灣亞洲藝術文化教育交流學會第一屆年會國際研討會\r\n活動日期：101年3月3～4日(六、日)\r\n活動主題：創造力、文化、全人教育\r\n有意參加者請至http://www.caaetaiwan.org下載報名表', 1),
+(6, '台灣亞洲藝術文化教育交流學會第一屆年會國際研討會\r\n活動日期：101年3月3～4日(六、日)\r\n活動主題：創造力、文化、全人教育\r\n有意參加者請至http://www.caaetaiwan.org下載報名表', 1);
 
 -- --------------------------------------------------------
 
@@ -185,7 +214,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 5000);
+(1, 130);
 
 --
 -- 已傾印資料表的索引
@@ -259,7 +288,7 @@ ALTER TABLE `ad`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
@@ -271,25 +300,25 @@ ALTER TABLE `bottom`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
 --
 ALTER TABLE `mvim`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`
